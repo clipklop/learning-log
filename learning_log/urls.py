@@ -6,3 +6,6 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('', include('learning_logs.urls')),
 ]
+
+handler404 = 'learning_logs.views.custom_page_not_found_view'
+handler500 = 'learning_logs.views.custom_error_view'

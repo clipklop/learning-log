@@ -108,3 +108,10 @@ def edit_entry(request, entry_id):
 def check_topic_owner(topic, request):
     if topic.owner != request.user:
         raise Http404
+
+
+def custom_page_not_found_view(request, exception):
+    return render(request, "learning_logs/errors/404.html", {})
+
+def custom_error_view(request, exception=None):
+    return render(request, "learning_logs/errors/500.html", {})
